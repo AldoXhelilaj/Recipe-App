@@ -2,15 +2,18 @@ import React from 'react';
 import style from './recipe.module.css';
 import { IoIosTime } from 'react-icons/io';
 import { AiFillThunderbolt } from 'react-icons/ai';
-
 import { GiCoffeeCup } from 'react-icons/gi'
+import { FaShareAltSquare } from 'react-icons/fa';
+import { WhatsappShareButton} from "react-share";
 
 
 
 
 
 
-const Recipe = ({ title, publisher, image, time, serving, calories }) => {
+
+
+const Recipe = ({ title, publisher, image, time, serving, calories,shareUrl }) => {
 
     return (
         <div className={style.recipe}>
@@ -27,6 +30,13 @@ const Recipe = ({ title, publisher, image, time, serving, calories }) => {
             <div className="description">
 
                 <h1>{title}</h1>
+                <div class="share">
+                <WhatsappShareButton size={32} url={shareUrl}> {shareCount =>
+                 <span className="myShareCountWrapper">{shareCount}</span>}
+                 <FaShareAltSquare/>
+                 </WhatsappShareButton>
+                
+                </div>
                 <p>{publisher}</p>
                 <div className="icons">
                     <div >
