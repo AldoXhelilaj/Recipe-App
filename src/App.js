@@ -117,7 +117,6 @@ const getRecipes = async()=>{
             time={recipe.recipe.totalTime}
             serving={recipe.recipe.yield}
             calories={recipe.recipe.calories}
-            shareUrl={recipe.recipe.shareAs}
 
 
 
