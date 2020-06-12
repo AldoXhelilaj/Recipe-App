@@ -47,8 +47,8 @@ code {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  max-height: 1905px;
-  max-width: 1200px;
+  max-height: 2000px;
+  width: 1300px;
   margin: 0 auto;
 }
 
