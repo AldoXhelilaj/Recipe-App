@@ -1,15 +1,55 @@
 import React from 'react';
 import style from './recipe.module.css';
+import { IoIosTime } from 'react-icons/io';
+import { AiFillThunderbolt } from 'react-icons/ai';
+
+import { GiCoffeeCup } from 'react-icons/gi'
 
 
 
-const Recipe=({title,publisher,image})=>{
 
-    return(
+
+
+const Recipe = ({ title, publisher, image, time, serving, calories }) => {
+
+    return (
         <div className={style.recipe}>
-            <h1>{title}</h1>
-            <p>{publisher}</p>
-            <img src={image} alt=""/>
+            <div style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: "contain",
+                width: "100%",
+                height: "300px",
+                backgroundRepeat: "no-repeat",
+                borderTopLeftRadius: "9px",
+                borderTopRightRadius: "9px",
+            }} alt="">
+            </div>
+            <div className="description">
+
+                <h1>{title}</h1>
+                <p>{publisher}</p>
+                <div className="icons">
+                    <div >
+
+                        <IoIosTime />
+                        <span>{time}</span>
+                    </div>
+                    <div>    
+                    <GiCoffeeCup />
+
+                        <span>
+                        {serving}
+                        </span>
+                    </div>
+                    <div>
+                        <AiFillThunderbolt />
+                        <span>{Math.round(calories)}</span>
+
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
 

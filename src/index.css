@@ -21,6 +21,7 @@ code {
   display: flex;
   padding-top: 50px;
   min-height: 3vh;
+  padding: 100px 0;
 }
 
 .search-bar {
@@ -33,15 +34,22 @@ code {
   border-radius: 20px;
   background-color: yellowgreen;
   border: none;
+  padding: 0 26px;
   color: white;
   margin-left: 15px;
   background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+  font-weight: bold;
+  text-transform: uppercase;
+
 }
 
 .recipes {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   justify-content: center;
+  max-height: 1905px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 img {
@@ -57,4 +65,27 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+
+.description {
+  padding: 10px 25px 10px 25px;
+}
+.icons{
+  display: flex;
+  justify-content: space-around;
+  font-size: 35px;
+  padding: 20px 0;
+  color: #377d66;
+}
+
+
+.icons div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icons span{
+
+    font-size: 15px;
+
 }

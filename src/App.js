@@ -3,6 +3,15 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import Recipe from './Recipe';
 import loadingsvg from './loading.svg';
+import orange  from './img/oranges.jpg';
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Open Sans:300,400,700', 'sans-serif']
+  }
+});
+
 
 
 
@@ -10,18 +19,18 @@ import loadingsvg from './loading.svg';
 function App() {
 
 
-  const APP_ID="e408ce92";
-const APP_KEY="73c6143a77077806213ff9f879809513";
+  const APP_ID="b5130093";
+const APP_KEY="af0e12055d61cb6d1c039f7f699c321f	";
 
 const CORS= "https://cors-anywhere.herokuapp.com/";
 
-// const exm_req=`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
+ //const exm_req=`${CORS}https://api.edamam.com/search?q=&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
-const [recipes, setRecipes] = useState([]);//set state of api
+const [recipe, setRecipes] = useState([]);//set state of api
 
 const [search, setSearch] = useState("");
 
-const [query, setQuery] = useState("");
+const [query, setQuery] = useState("lemons");
 
 const[loading,setLoading]= useState(true);//set state of the loading svg
 
@@ -37,19 +46,26 @@ const[loading,setLoading]= useState(true);//set state of the loading svg
 useEffect(()=>{
 
 console.log("effect has been run");
-   getRecipes();
+   getRecipes().then(data=>console.log(data));
 
 },[query]);
+
+
 
 const getRecipes = async()=>{
 
   try {
-    const response= await fetch(`${CORS}https://www.food2fork.com/api/search?key=e1ad4f01ff7d0da10b55129943935a14&q=${query}`);
-    setLoading(false);
-    const data= await response.json();
+    const response= await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+    console.log(response)
 
-    setRecipes(data.recipes)
-    console.log(data);
+    setLoading(false);
+    setRecipes([])
+    const data= await response.json();
+    
+    setRecipes(data.hits)
+    return data
+
+
     
       } catch (error) {
        console.log(error);
@@ -66,6 +82,7 @@ const getRecipes = async()=>{
 
     const updateQuery= e=>{
       e.preventDefault();
+
       setQuery(search)
       setSearch("")
 
@@ -77,7 +94,7 @@ const getRecipes = async()=>{
   return (
 
     
-    <div className="App">
+    <div className="App" style={{backgroundImage:`url(${orange})`,backgroundSize: "cover"}}>
       {loading ? (<img  className="loading" src={loadingsvg} alt='loading'/>
   
   ) :(
@@ -89,13 +106,27 @@ const getRecipes = async()=>{
         <button className="search-button" value="">Search</button>
     </form>
     <div className="recipes">
-              {recipes.map(recipe=>(
+              {recipe.map(recipe=>(
                 
-              <Recipe
-                key={recipe.title} title={recipe.title} 
-                publisher={recipe.publisher}
-                image={recipe.image_url}
-                />  ))}
+    
+            <Recipe 
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            publisher={recipe.recipe.ingredientLines}
+            image={recipe.recipe.image}
+            time={recipe.recipe.totalTime}
+            serving={recipe.recipe.yield}
+            calories={recipe.recipe.calories}
+
+
+
+            />
+
+                
+                  ))
+                
+                
+                }
     </div>
    </div>)}
       
