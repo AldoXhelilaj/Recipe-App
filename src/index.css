@@ -69,6 +69,8 @@ img {
 
 .description {
   padding: 10px 25px 10px 25px;
+
+  position: relative;
 }
 .icons{
   display: flex;
@@ -88,4 +90,11 @@ img {
 
     font-size: 15px;
 
+}
+.share {
+  position: absolute;
+  top: 29px;
+  font-size: 41px;
+  right: 22px;
+color:#377d66;
 }
