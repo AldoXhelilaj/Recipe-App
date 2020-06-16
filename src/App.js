@@ -86,6 +86,9 @@ const getRecipes = async()=>{
       setQuery(search)
       setSearch("")
 
+
+
+      
       console.log(search)
   }
 
