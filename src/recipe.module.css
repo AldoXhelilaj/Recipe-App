@@ -21,3 +21,19 @@
     text-align: left;
     width: 80%
 }
+
+
+@media (max-width: 525px) {
+    .recipes {
+      flex-flow: wrap;
+  
+      width: auto;
+    }
+    .recipe {
+      width: 100%;
+    }
+    .recipe  >div {
+      background-size: cover !important;
+    }
+  }
+  

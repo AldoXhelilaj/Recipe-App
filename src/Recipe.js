@@ -30,9 +30,8 @@ const Recipe = ({ title, publisher, image, time, serving, calories,shareUrl }) =
             <div className="description">
 
                 <h1>{title}</h1>
-                <div class="share">
-                <WhatsappShareButton size={32} url={shareUrl}> {shareCount =>
-                 <span className="myShareCountWrapper">{shareCount}</span>}
+                <div className="share">
+                <WhatsappShareButton size={32} url={shareUrl}>
                  <FaShareAltSquare/>
                  </WhatsappShareButton>
                 
