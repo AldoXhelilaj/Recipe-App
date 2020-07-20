@@ -4,7 +4,6 @@ import classes from '../Auth/auth.module.css'
 import Input from "./Input"
 import stylesInput from '../components/input.module.css'
 import Button from "./Button"
-import styleButton from '../components/button.module.css'
 import * as actions from '../store/actions'
 import Spinner from './Spinner'
 import {Redirect} from 'react-router-dom'
@@ -146,8 +145,6 @@ class Auth extends Component {
       }
     render() {
 
-
-const info=this.state.defaultUser;
 
      
         const {load,error,isAuth}=this.props;

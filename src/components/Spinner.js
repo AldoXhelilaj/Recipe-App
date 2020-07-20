@@ -20,7 +20,7 @@ return   console.log(+"spinner")
 
   render() {
 
-    const {loading,error}= this.props;
+    const {loading}= this.props;
    
 
 

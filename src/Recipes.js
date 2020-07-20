@@ -1,12 +1,11 @@
 
 
-import React, { useEffect, useState, Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux'
-import { Route, Switch, Link, NavLink, Router, Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import loadingsvg from './loading.svg';
 import Recipe from './Recipe';
-import Auth from './components/Auth';
-import orange from './img/oranges.jpg';
+
 
 
 
@@ -16,7 +15,7 @@ const Recipes = () => {
   const APP_ID = "b5130093";
   const APP_KEY = "af0e12055d61cb6d1c039f7f699c321f	";
 
-  const CORS = "https://cors-anywhere.herokuapp.com/";
+ // const CORS = "https://cors-anywhere.herokuapp.com/";
 
   //const exm_req=`${CORS}https://api.edamam.com/search?q=&app_id=${APP_ID}&app_key=${APP_KEY}`;
 

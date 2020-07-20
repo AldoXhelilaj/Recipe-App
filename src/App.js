@@ -1,12 +1,10 @@
 
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import Recipe from './Recipe';
-import loadingsvg from './loading.svg';
 import { connect } from 'react-redux'
 import orange from './img/oranges.jpg';
 import WebFont from 'webfontloader';
-import { Route, Switch, Link, NavLink, Router, Redirect } from 'react-router-dom';
+import { Route, Switch,  NavLink } from 'react-router-dom';
 import Auth from './components/Auth';
 import Recipes from './Recipes'
 import Logout from './components/Logout'
